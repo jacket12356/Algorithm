@@ -11,3 +11,26 @@ Performance is a central consideration in the study of algorithms. **SECTION 1.4
 **Defination of Algorithms:**  
 >When we write a computer program, we are generally implementing a method that has been devised previously to solve some problem. This method is often independent of the paticular programming language being used--it is likely to be equally appropriate for many computers and many programming languages. It is the method, rather than the computer program itself, that specifies the step that we can take to solve the problem. The term *algorithm* is used in computer science to describe a **finite, deterministic, and effetive** problem-solving method suitable for implementation as a computer program. Algorithms are the stuff of computer science: they are central objects of study in the field.  
 We can define an algorithm by describing a procedure for solving a problem in a natural language, or by writing a computer program that implements the procedure.
+
+
+> Here is a example as shown at below for Euclid's(欧几里得) algorithm for finding the greatest common divisor of two numbers, a variant of which was devised over 2300 years ago. 
+
+```java
+//Euclid's algorithm
+public static int gcd(int p, int q){
+    if (q == 0) return p;
+    int r = p % q;
+    return gcd(q, r);
+}
+```
+
+**Algorithms and data structures**
+
+> In this book, we use computer programs to describe algorithms. One important reason for doing so is that it makes easier the task of checking whether they are finite, deterministic, and effective, as required. But it is also important to recognize that a program in a particular language is just one way to express an algorithm. The fact that many of the algorithms in this book have been expressed in multiple programming languages over the past several decades reinforces the idea that each algorithm is a method suitable for implementation on any computer in any programming language.  
+Most algorithms of interest involve organizing the data involved in the computation. Such organization leads to *data structures*, which also are central objects of study in computer science. Algorithms and data structures go hand in hand. *In this book we take the view that data structures exists as the byproducts or end products of algorithms and that we must therefore study them in order to understand the algorithms.* **Simple algorithms can give rise to complicated data structures and, conversely, complicated algorithms can use simple data structures.** We shall study the properties of many data structures in this book; 
+
+**Why should we learn Algorithms?**
+
+> when we use  computer to help us solve a problem, we typically are faced with a number of possible approaches. For small problems, it hardly matters which approach we use, as long as we have one that correctly solves the problem. **For huge problems, however, we quickly become motivated to devise methods that use time and space efficiently.**  
+***The primary reason to learn about algorithms is that this discipline gives us the potential to reap huge savings, even to the point of enabling us to do tasks that would otherwise be impossible.*** In an application where we are processing millions of objects, it is not unusual to be able to make a program millions of times faster by using a well-designed algorithm. We shall see such examples on numerous occasions throughout the book. By contrast, investing additional  money or time to buy and install a new computer holds the potential for speeding up a program by perhaps a factor of only 10 or 100. Careful algorithm design is an extremely effective part of the process of solving a huge problem, whatever the applications area.  
+The sharing of programs in computer systems is becoming more widespread, so although we might expect to have to implement only a small fraction of them. For example, the Java libraries contain implementations of a host of fundmental algorithms. However, implementing simple versions of basic algorithms helps us to understand them better and thus to more effictively use and tune advanced versions from a library. More important, the opportunity to reimplement basic algorithms arises frequently. The primary reason to do so is that we are faced, all too often, with completely new computing environments with new features that old implementations may not use to best advantage. In this book, we concentrate on the simplest reasonable implementations of the best algorithms. We do pay careful attention to coding the critical parts of the algorithms, and take pains to note where low-level optimization effort could be most beneficial.
