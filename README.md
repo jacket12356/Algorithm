@@ -8,10 +8,9 @@ Performance is a central consideration in the study of algorithms. **SECTION 1.4
 
 > we conclude with a case study where we consider solutions to a connectivity problem that uses algorithms and data structures that implement the classic *Union-find* ADT.
 
-**Defination of Algorithms:**  
+**Defination of Algorithms**  
 >When we write a computer program, we are generally implementing a method that has been devised previously to solve some problem. This method is often independent of the paticular programming language being used--it is likely to be equally appropriate for many computers and many programming languages. It is the method, rather than the computer program itself, that specifies the step that we can take to solve the problem. The term *algorithm* is used in computer science to describe a **finite, deterministic, and effetive** problem-solving method suitable for implementation as a computer program. Algorithms are the stuff of computer science: they are central objects of study in the field.  
 We can define an algorithm by describing a procedure for solving a problem in a natural language, or by writing a computer program that implements the procedure.
-
 
 > Here is a example as shown at below for Euclid's(欧几里得) algorithm for finding the greatest common divisor of two numbers, a variant of which was devised over 2300 years ago. 
 
@@ -41,3 +40,5 @@ Fundamentals (chapter 1) in the context of this book are the basic principles an
 sorting (chapter 2) for rearranging arrays in order are of fundamental importance. We consider a variety of algorithms in considerable depth, including insertion sort, shell sort, quick sort, mergesort, and heapsort. We also enconter algorithms for several related problems, including priorith queues, selection, and merging. Many of these algorithms will find application as the basis for other algorithms later in the book.  
 Searching (chapter 3) for finding specific items among large collections of items are also of fundamental importance. We discuss basic and advanced methods for searching, including binary search trees, balanced search trees, and hashing. We note relationships among these methods and compare performance.   
 Graphs (chapter 4) are sets of objects and connections, possibly with weights and orientation. Object are useful models for a vast number of difficult and important problems, and the design of algorithms for processing graphs is a major field of study. We consider depth-first search, breadth-first search, connectivity problems, and several algorithms and applications, including kruskal's and prim's algorithms for finding minimum spanning tree and Dijstra's and the Bellman-Ford algorithms for solving shortest-paths problems.
+
+
