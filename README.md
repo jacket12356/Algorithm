@@ -42,3 +42,77 @@ The sharing of programs in computer systems is becoming more widespread, so alth
 **Graphs (chapter 4)** are sets of objects and connections, possibly with weights and orientation. Object are useful models for a vast number of difficult and important problems, and the design of algorithms for processing graphs is a major field of study. We consider depth-first search, breadth-first search, connectivity problems, and several algorithms and applications, including kruskal's and prim's algorithms for finding minimum spanning tree and Dijstra's and the Bellman-Ford algorithms for solving shortest-paths problems.
 
 
+### Basic Programming Model
+**Typical array-processing code**  
+```java
+//reverse the elements within an array
+int n = a.length;
+for(int i = 0;i < n/2;i++){
+    double temp = a[i];
+    a[i] = a[n-i-1];
+    a[n-i-1] = temp;
+}
+
+//matrix-matrix multiplication
+int n = a.length;
+double[][] c = new double[n][n];
+for(int i = 0;i < n;i++){
+    for(int j = 0;j < n;j++){
+        for(int k = 0;k < n;k++)
+            c[i][j] += a[i][k] * b[k][j];
+    }
+}
+```
+
+**Typical implementation of static methods**
+```java
+//prime test（素数）
+public static boolean isPrime(int n){
+    if(n < 2)   return false;
+    for(int n = 2;i*i <= n;i++)
+        if(n % i == 0)  return false;
+    return true;
+}
+
+//square root(Newton's method)
+public static double sqrt(double c){
+    if(c < 0)   return Double.NaN;
+    double err = 1e-15;    //Demanding precision
+    double t = c;
+    while(Math.abs(t-c/t) > err * t)
+        t = (c/t + t) / 2.0;
+    return t;
+}
+
+//hypotenuse of a right triangle（求三角形斜边）
+public static double hypotenuse(double a, double b){
+    return Math.sqrt(a*a + b*b);
+}
+
+//Harmonic number(调和级数)
+public static double H(int n){
+    double sum = 0.0;
+    for(int i = 1;i <= n;i++)
+        sum = 1.0 / i;
+    return sum;
+}
+```
+
+**Recursion**
+> A small problem can call itself. For example, the code at the bottom of this page gives an alternative implementation of the rank() method in BinarySearch. We often use recursive implementations of methods because they can lead to compact, elegant code that is easier to understand than a corresponding implementation that does not use recursion. There are three important rules of thumb in developing recursive programs:
++ The recursion has a base case--we always include a conditional statement as the first statement in the program that has a `return`.
++ Recursive calls must address subproblems that are smaller in some sense, so that recursive calls converge to the base case. 
++ Recursive calls should not address subproblems that *overlap*. In the code below, the portions of the array referenced by the two subproblems are disjoint.
+```java
+//Recursive implementation of binary search
+public static int rank(int key, int[] a){
+    return rank(key, a, 0, a.length-1);
+}
+public static int rank(int key, int[] a, int lo, int hi){
+    if(lo > hi) return -1;
+    int mid = lo + (hi - lo) / 2;
+    if(key < a[mid])    return rank(key, a, lo, mid-1);
+    else if(key > a[mid])   return rank(key, a, mid+1, hi);
+    else    return mid;
+}
+```
