@@ -116,3 +116,35 @@ public static int rank(int key, int[] a, int lo, int hi){
     else    return mid;
 }
 ```
+
+```java
+public static double uniform(double a, double b){
+    return a + StdRandom.random() * (b-a);
+}
+
+public static double uniform(int n){
+    return (int)(StdRandom.random() * n);
+}
+
+public static void shuffle(double[] a){
+    int n = a.length;
+    for(int i = 0;i < n;i++){
+        int r = i + StdRandom.uniform(n-i);
+        double temp = a[i];
+        a[i] = a[r];
+        a[r] = temp;
+    }
+}
+```
+> **The purpose of an API** is to separate the client from the implementation: the client should know nothing about the implementation other than information given in the API, and the implementation should not take properties of any particular client into account. API enable us to separately develop code for various purpose, then reuse it widely. No Java library can contain all the methods that we might need for agiven computation, so this ability is a crucial step in addressing complex programming applications. Accordingly, programmers normally think of the API as a contrack between the client and the implementation that is a clear specification of what each method is to do. Our goal when developing an implementation is to honr the terms of the contract. Often, there are many ways to do so, and separating client code from implementation code gives us the freedom to substitute new and improved implementations. In the study of algorithms, this ability is an important ingredient in our ability to understand the impact of algorithmic improvements that we develop.
+
+> By default, command-line arguments, standard input, and standard output are associated with an application supported by either the operating system or the program development enviorment that takes commands. We use the generic term *terminal window* to refer to the window maintained by this application, where we type and read text. Since early Unix systems in the 1970s this model has proven to be a convenient and direct way for us to interact with our programs and data. We add to the classical model a *standard drawing* that allows us to create visual representations for data analysis.
+
+Why do array indices start at 0 instead of 1.  
+This convention originated with machine-language programming, where the address of an array element would be computed by adding the index to the address of the beginning of an array. Starting indices at 1 would entail either a waste of space at beginning of the array or a waste of time to substract the 1.
+
+Programming in Java is largely based on building data types known as *reference types* with the familiar Java **class**. This style of programming is known as *object-oriented programming*, as it revolves around the concept of an object, an entity that holds a data type value. With Java's primitive types we are largely confined to programs that operate on numbers, but with reference types we can write programs that operate on strings, pictures, sounds, any of hundreds of other abstractions that are available in Java's standard libraries. Even more significant than libraries of predefined data types is that the range of data types available in Java programming is open-ended, because you can define your own data types to implement any abstraction whatsoever.
+
+An abstract data types(ADT) is a data type whose representation is hidden from the client. Implementating an ADT as a Java class is not very different from implementing a function library as a set of static methods. The primary difference is that we associate data with the function implementations and we hide the representation of the data from the client. When using an ADT, we focus on the operations specified in the API and pay no attention to the data representaion; when implementing an ADT, we focus on the data, then implement operations on that data.
+
+Our primary reason for studying different algorithms for the same task is that performance characteristics differ. Abstract data types are an appropriate framework for the study of algorithms because they allow us to put knowledge of algorithm performance to immediate use; we can substitute one algorithm for another to improve performance for all clients without changing any client code. 
